@@ -43,7 +43,7 @@ class Paper {
         const angle = Math.atan2(e.clientY - this.mouseTouchY, e.clientX - this.mouseTouchX);
         this.rotation = angle * (180 / Math.PI);
       }
-      paper.style.transform = translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg);
+      paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
     });
 
     document.addEventListener('mouseup', () => {
@@ -80,7 +80,7 @@ class Paper {
       this.lastX = touch.clientX;
       this.lastY = touch.clientY;
       // Note: Touch rotation is not implemented here.
-      paper.style.transform = translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg);
+      paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
     }, { passive: false });
 
     paper.addEventListener('touchend', (e) => {
